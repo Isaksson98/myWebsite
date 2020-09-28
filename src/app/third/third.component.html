@@ -1,1 +1,11 @@
-<p>third works!</p>
+<div>
+  <p>Books:</p>
+  <div *ngFor="let book of items">
+    <p> Title: {{ book.payload.doc.data().Title }}</p>
+    <p> Author: {{ book.payload.doc.data().Author }}</p>
+    <br />
+ 
+  </div>
+
+
+</div>

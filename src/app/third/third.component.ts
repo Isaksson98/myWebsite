@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BooksService } from "../books.service";
+
+
 @Component({
   selector: 'app-third',
   templateUrl: './third.component.html',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThirdComponent implements OnInit {
 
-  constructor() { }
+  items: Array<any>;
 
-  ngOnInit(): void {
+  constructor(private booksService: BooksService ) { }
+
+  ngOnInit() {
+    this.booksService.getReadBooks().subscribe(res => {
+      this.items = res;
+    })
   }
 
-}
+  }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
+import { BooksService } from "../books.service";
 
 @Component({
   selector: 'app-fourth',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FourthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private booksService: BooksService) { }
 
-  ngOnInit(): void {
+  BooksForm = new FormGroup({
+    title: new FormControl(''),
+    author: new FormControl(''),
+  });
+
+  itm = {
+    title: 'pottr',
+    author: 'rowling',
+    rating: 4
+  }
+
+  ngOnInit(): void {}
+
+  onSubmit() {
+    alert(this.BooksForm.value)
+    this.booksService.addBook(this.BooksForm.value)
+      .then(
+        res => {}
+      )
   }
 
 }

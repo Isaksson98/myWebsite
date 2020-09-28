@@ -1,12 +1,15 @@
-<div ng-app="myApp" ng-controller="formCtrl">
-  <form novalidate>
-    Book Name:<br>
-    <input type="text" ng-model="user.firstName"><br>
-    Author Name:<br>
-    <input type="text" ng-model="user.lastName">
-    <br><br>
-    <button ng-click="reset()">RESET</button>
-  </form>
-  <p>form = {{user}}</p>
-  <p>master = {{master}}</p>
-</div>
+<form [formGroup]="BooksForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Title:
+    <input type="text" formControlName="title">
+  </label>
+
+  <label>
+    Author:
+    <input type="text" formControlName="author">
+  </label>
+
+  <button type="submit" [disabled]="!BooksForm.valid">Submit</button>
+
+</form>
