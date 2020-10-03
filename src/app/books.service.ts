@@ -10,10 +10,23 @@ export class BooksService {
   constructor(private firestore: AngularFirestore) { }
 
   addBook(data) {
+
+    let year = data._dateRead.getFullYear();
+    let month = data._dateRead.getMonth();
+    let day = data._dateRead.getDay();
+
+    let _dateRead = {
+      year: year,
+      month: month,
+      day: day
+    }
     return this.firestore.collection('Books').add({
-      Title: data.title,
-      Author: data.author.toLowerCase(),
-      Rating: parseInt(data.rating),
+      Title: data._title,
+      Author: data._author.toLowerCase(),
+      Rating: parseInt(data._rating),
+      Subject: data._subject,
+      DateAdded: data._dateAdded,
+      DateRead: _dateRead,
     });
   }
 

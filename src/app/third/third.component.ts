@@ -14,6 +14,9 @@ export class ThirdComponent implements OnInit {
 
   constructor(private booksService: BooksService ) { }
 
+  monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
   ngOnInit() {
     this.booksService.getReadBooks().subscribe(res => {
       this.items = res;

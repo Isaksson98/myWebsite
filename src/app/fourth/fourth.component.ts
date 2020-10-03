@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { formatDate } from '@angular/common';
 
 import { BooksService } from "../books.service";
 
 @Component({
   selector: 'app-fourth',
   templateUrl: './fourth.component.html',
-  styleUrls: ['./fourth.component.css']
+  styleUrls: ['./fourth.component.css'],
 })
-export class FourthComponent implements OnInit {
+export class FourthComponent {
 
-  constructor(private booksService: BooksService) { }
+  myModel = {
+    _title: '',
+    _author: '',
+    _subject: '',
+    _rating: '',
+    _dateRead: new Date(),
+    _dateAdded: new Date()
+  };
 
-  BooksForm = new FormGroup({
-    title: new FormControl(''),
-    author: new FormControl(''),
-  });
+  constructor(private booksService: BooksService) {}
 
-  itm = {
-    title: 'pottr',
-    author: 'rowling',
-    rating: 4
-  }
+ 
 
   ngOnInit(): void {}
 
   onSubmit() {
-    alert(this.BooksForm.value)
-    this.booksService.addBook(this.BooksForm.value)
+    alert((typeof (this.myModel._dateAdded)))
+    this.booksService.addBook(this.myModel)
       .then(
         res => {}
       )

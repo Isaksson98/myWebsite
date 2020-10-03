@@ -3,9 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\first",
-    "\\src\\app\\fourth"
+    "\\src\\app\\fourth",
+    "\\src\\app\\third"
   ],
-  "SelectedNode": "\\src\\app\\fourth\\fourth.component.html",
+  "SelectedNode": "\\src\\app\\third\\third.component.css",
   "PreviewInSolutionExplorer": false
 }

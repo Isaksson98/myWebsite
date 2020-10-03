@@ -1,15 +1,43 @@
-<form [formGroup]="BooksForm" (ngSubmit)="onSubmit()">
+<div class="container">
+  <div id="book-form">
 
-  <label>
-    Title:
-    <input type="text" formControlName="title">
-  </label>
+    <form (ngSubmit)="onSubmit()">
 
-  <label>
-    Author:
-    <input type="text" formControlName="author">
-  </label>
+      <mat-form-field class="example-full-width">
+        <mat-label>TITLE</mat-label>
+        <input required autocomplete="off" matInput [(ngModel)]="myModel._title" name="title">
+      </mat-form-field>
 
-  <button type="submit" [disabled]="!BooksForm.valid">Submit</button>
+      <mat-form-field class="example-full-width">
+        <mat-label>AUTHOR</mat-label>
+        <input required autocomplete="off" matInput [(ngModel)]="myModel._author" name="author">
+      </mat-form-field>
 
-</form>
+      <mat-radio-group [(ngModel)]="myModel._subject" name="subject" class="example-full-width">
+        <mat-radio-button value="Fiction">Fiction</mat-radio-button>
+        <mat-radio-button value="Non-Fiction">Non-Fiction</mat-radio-button>
+        <mat-radio-button value="Other">Other</mat-radio-button>
+      </mat-radio-group>
+
+      <br>
+      <mat-form-field appearance="fill" class="example-half-width">
+        <mat-label>Good?</mat-label>
+        <mat-select required [(ngModel)]="myModel._rating" name="rating">
+          <mat-option value="1">Great</mat-option>
+          <mat-option value="2">Good</mat-option>
+          <mat-option value="3">-</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>When did you finish it?</mat-label>
+        <input matInput required autocomplete="off" [(ngModel)]="myModel._dateRead" name="dateRead" [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button type="submit" color="primary" >ENTER</button>
+
+    </form>
+  </div>
+</div>
