@@ -13,7 +13,7 @@ export class BooksService {
 
     let year = data._dateRead.getFullYear();
     let month = data._dateRead.getMonth();
-    let day = data._dateRead.getDay();
+    let day = data._dateRead.getDate();
 
     let _dateRead = {
       year: year,
