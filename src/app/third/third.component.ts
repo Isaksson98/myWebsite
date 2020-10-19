@@ -10,17 +10,17 @@ import { BooksService } from "../books.service";
 })
 export class ThirdComponent implements OnInit {
 
-  items: Array<any>;
+    items: Array<any>;
 
-  constructor(private booksService: BooksService ) { }
+    constructor(private booksService: BooksService ) { }
 
-  monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
+    monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
 
-  ngOnInit() {
-    this.booksService.getReadBooks().subscribe(res => {
-      this.items = res;
-    })
-  }
+    ngOnInit() {
+      this.booksService.getReadBooks().subscribe(res => {
+        this.items = res;
+      })
+    }
 
   }

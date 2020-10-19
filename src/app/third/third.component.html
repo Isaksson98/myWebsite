@@ -1,21 +1,19 @@
-<p>Books:</p>
-<div class="container">
+
   <mat-card class="card" *ngFor="let book of items">
     <mat-card-header>
-      <mat-card-title>{{ book.payload.doc.data().Title }}</mat-card-title>
-      <mat-card-subtitle>{{ book.payload.doc.data().Author }}</mat-card-subtitle>
+      <mat-card-title class="capitalize">{{ book.payload.doc.data().Title }}</mat-card-title>
+      <mat-card-subtitle class="capitalize">{{ book.payload.doc.data().Author }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <p> Subject: {{ book.payload.doc.data().Subject }}</p>
       <p> Rating: {{ book.payload.doc.data().Rating }}</p>
       <p>
         Date Read:
-        {{ book.payload.doc.data().DateRead.day}}
         {{ monthNames[book.payload.doc.data().DateRead.month]}}
         {{ book.payload.doc.data().DateRead.year}}
       </p>
     </mat-card-content>
 
   </mat-card>
-</div>
+
 

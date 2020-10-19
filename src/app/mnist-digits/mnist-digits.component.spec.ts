@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FirstComponent } from './first.component';
+import { MnistDigitsComponent } from './mnist-digits.component';
 
-describe('FirstComponent', () => {
-  let component: FirstComponent;
-  let fixture: ComponentFixture<FirstComponent>;
+describe('MnistDigitsComponent', () => {
+  let component: MnistDigitsComponent;
+  let fixture: ComponentFixture<MnistDigitsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FirstComponent ]
+      declarations: [ MnistDigitsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FirstComponent);
+    fixture = TestBed.createComponent(MnistDigitsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

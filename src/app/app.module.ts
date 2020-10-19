@@ -12,23 +12,23 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 
-
-
-
-
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
-import { ThirdComponent } from './third/third.component';
-import { FourthComponent } from './fourth/fourth.component';
 
 
 //Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { ThirdComponent } from './third/third.component';
+import { FourthComponent } from './fourth/fourth.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MnistDigitsComponent } from './mnist-digits/mnist-digits.component';
+import { BooksComponent } from './books/books.component';
 
 //Put this in environments??
 const firebaseConfig = {
@@ -45,10 +45,11 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent,
-    SecondComponent,
     ThirdComponent,
-    FourthComponent
+    FourthComponent,
+    NavbarComponent,
+    MnistDigitsComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +67,8 @@ const firebaseConfig = {
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

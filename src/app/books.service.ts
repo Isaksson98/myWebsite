@@ -7,7 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class BooksService {
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private db: AngularFirestore) { }
 
   addBook(data) {
 
@@ -20,7 +20,7 @@ export class BooksService {
       month: month,
       day: day
     }
-    return this.firestore.collection('Books').add({
+    return this.db.collection('Books').add({
       Title: data._title,
       Author: data._author.toLowerCase(),
       Rating: parseInt(data._rating),
@@ -31,6 +31,6 @@ export class BooksService {
   }
 
   getReadBooks() {
-    return this.firestore.collection("Books").snapshotChanges();
+    return this.db.collection('Books', ref => ref.orderBy('DateAdded', 'desc')).snapshotChanges()
   }
 }

@@ -12,3 +12,7 @@
   overflow: auto;
   width: 1000px;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}

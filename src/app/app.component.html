@@ -2,57 +2,24 @@
 
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
-  <span>Welcome</span>
+  <div class="toolbar" role="banner">
+    <img width="40"
+         alt="Angular Logo"
+         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+    <app-navbar></app-navbar>
     <div class="spacer"></div>
-</div>
-
-<div class="content" role="main">
-
-  <input type="hidden" #selection>
-
-  <div class="card-container">
-    <div class="card card-small" (click)="selection.value = 'First'">
-      <a routerLink="/first-component" routerLinkActive="active">First Component</a>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'Second'">
-      <a routerLink="/second-component" routerLinkActive="active">Second Component</a>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'Third'">
-      <a routerLink="/third-component" routerLinkActive="active">Third Component</a>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'Fourth'">
-      <a routerLink="/fourth-component" routerLinkActive="active">Fourth Component</a>
-    </div>
-
+    Right side
   </div>
 
-  <!-- Terminal -->
-  <div class="terminal" [ngSwitch]="selection.value">
-    <pre *ngSwitchDefault>Write Code!</pre>
-    <pre *ngSwitchCase="'First'">First</pre>
-    <pre *ngSwitchCase="'Second'">Second</pre>
-    <pre *ngSwitchCase="'Third'">Third</pre>
-    <pre *ngSwitchCase="'Fourth'">Fourth</pre>
+  <div class="content" role="main">
+
+    <router-outlet></router-outlet>
+
+
+    <footer>
+
+      Footer
+      <hr>
+    </footer>
 
   </div>
-
-  <router-outlet></router-outlet>
-
-
-  <!-- Footer -->
-  <footer>
-
-    Footer
-    <hr>
-  </footer>
-
-</div>
