@@ -1,0 +1,7 @@
+<h1>Write a review</h1>
+<div class="form-group">
+
+  <textarea #reviewInput [value]="text" class="form-control" rows="10">Good movie</textarea>
+</div>
+<button class="btn btn-dark" (click)="predict(reviewInput.value)">Predict sentiement</button>
+<!--<img src="/assets/florence3.jpg"/>-->

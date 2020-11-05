@@ -6,6 +6,7 @@ import { ThirdComponent } from './third/third.component';
 import { FourthComponent } from './fourth/fourth.component';
 import { MnistDigitsComponent } from './mnist-digits/mnist-digits.component';
 import { BooksComponent } from './books/books.component';
+import { ImdbSentiementComponent } from './imdb-sentiement/imdb-sentiement.component';
 
 const routes: Routes = [
   { path: 'navbar-component', component: NavbarComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'fourth-component', component: FourthComponent },
   { path: 'mnist-digits-component', component: MnistDigitsComponent },
   { path: 'books-component', component: BooksComponent },
+  { path: 'imdb-sentiement-component', component: ImdbSentiementComponent },
 
 ];
 

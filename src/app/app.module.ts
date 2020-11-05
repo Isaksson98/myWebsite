@@ -15,10 +15,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 
 
-
 //Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,8 @@ import { FourthComponent } from './fourth/fourth.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MnistDigitsComponent } from './mnist-digits/mnist-digits.component';
 import { BooksComponent } from './books/books.component';
+import { ImdbSentiementComponent } from './imdb-sentiement/imdb-sentiement.component';
+import { CanvasComponent } from './canvas/canvas.component';
 
 //Put this in environments??
 const firebaseConfig = {
@@ -49,7 +51,9 @@ const firebaseConfig = {
     FourthComponent,
     NavbarComponent,
     MnistDigitsComponent,
-    BooksComponent
+    BooksComponent,
+    ImdbSentiementComponent,
+    CanvasComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ const firebaseConfig = {
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     MatInputModule,
     MatSelectModule,
     MatIconModule,

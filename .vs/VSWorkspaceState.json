@@ -3,9 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\fourth",
-    "\\src\\app\\third"
+    "\\src\\app\\books",
+    "\\src\\app\\imdb-sentiement",
+    "\\src\\app\\mnist-digits",
+    "\\src\\app\\third",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\books.service.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }
